@@ -2,6 +2,7 @@ from groq import Groq
 import os
 from dotenv import load_dotenv
 from tools.search import run_all_searches
+import time
 
 load_dotenv(override=True)
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -161,12 +162,16 @@ def run_brand_audit_pipeline(brand_name):
     results = {}
     search_data = run_all_searches(brand_name)
     results["search_data"] = search_data
+    time.sleep(3)
     perception = perception_researcher_agent(brand_name, search_data)
     results["perception"] = perception
+    time.sleep(3)
     sentiment = sentiment_analyst_agent(brand_name, perception)
     results["sentiment"] = sentiment
+    time.sleep(3)
     audit_report = audit_report_writer_agent(brand_name, perception, sentiment)
     results["audit_report"] = audit_report
+    time.sleep(3)
     judge_evaluation = llm_judge_agent(brand_name, audit_report)
     results["judge_evaluation"] = judge_evaluation
     return results
