@@ -85,5 +85,5 @@ streamlit run app.py
 ```
 
 ## Project Context
-Semester IV B.E. Electronics and Communication
+Semester IV B.Tech. Electronics and Communication
 Agentic AI Systems Project
