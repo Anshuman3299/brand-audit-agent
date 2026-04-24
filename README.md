@@ -55,10 +55,6 @@ Get free API keys:
 - Groq: https://console.groq.com
 - Tavily: https://tavily.com
 
-### 5. Run
-```bash
-streamlit run app.py
-```
 
 ## Project Context
 Semester IV B.Tech. Electronics and Communication
