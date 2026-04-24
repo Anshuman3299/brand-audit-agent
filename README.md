@@ -50,30 +50,6 @@ Final Scored Brand Audit Report
 - Structural Clarity: 0-10
 - Total: 50 points
 
-## Local Setup
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/Anshuman3299/brand-audit-agent
-cd brand-audit-agent
-```
-
-### 2. Create virtual environment
-```bash
-python3.13 -m venv venv
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Add API keys
-```bash
-cp .env.example .env
-# Edit .env and add your keys
-```
 
 Get free API keys:
 - Groq: https://console.groq.com
