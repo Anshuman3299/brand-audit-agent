@@ -51,10 +51,17 @@ Final Scored Brand Audit Report
 - Total: 50 points
 
 
-Get free API keys:
-- Groq: https://console.groq.com
-- Tavily: https://tavily.com
-
+## Project layout
+.
+├── app.py                 # Streamlit UI
+├── config.py              # Env loading, API key helpers, model defaults
+├── gemini_agents.py       # Multi-step campaign pipeline
+├── tools                  # Function-calling tools (catalog, Tavily search)
+├── architecture.png       # Architecture Diagram
+├── problem_statement.txt  # Generated images + Markdown (gitignored except .gitkeep)
+├── requirements.txt
+├── .env.example.pages     # Template only — copy to `.env` locally
+└── README.md
 
 ## Project Context
 Semester IV B.Tech. Electronics and Communication
