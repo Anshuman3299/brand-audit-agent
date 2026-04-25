@@ -1,0 +1,20 @@
+
+DEMO VIDEO
+Brand Audit AI Agent — 3 Minute Demo
+
+Loom Video Link:
+https://www.loom.com/share/e0a569b075874227aca0bdb6a3f57cc0
+
+Video covers:
+- Project introduction by Anshuman Deshmukh and Tushar
+- Live demo of 4-agent pipeline
+- Tavily Search integration showing live web data
+- Sentiment Analysis with scores out of 10
+- LLM-as-Judge quality evaluation out of 50
+- Railway deployment live URL demo
+
+Live App URL:
+https://web-production-782e2.up.railway.app
+
+GitHub:
+https://github.com/Anshuman3299/brand-audit-agent
