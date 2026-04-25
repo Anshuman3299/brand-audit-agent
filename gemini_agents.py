@@ -6,23 +6,29 @@ import time
 
 load_dotenv(override=True)
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL_NAME = "llama-3.3-70b-versatile"
+PRIMARY_MODEL = "llama-3.3-70b-versatile"
+FALLBACK_MODEL = "llama-3.1-8b-instant"
 
 def call_llm(system_prompt, user_message):
-    try:
-        response = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_message}
-            ],
-            temperature=0.7,
-            max_tokens=2048
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        return f"Error calling LLM: {str(e)}"
-
+    for model in [PRIMARY_MODEL, FALLBACK_MODEL]:
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_message}
+                ],
+                temperature=0.7,
+                max_tokens=2048,
+                timeout=60
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            if "rate_limit" in str(e) or "429" in str(e):
+                continue
+            return f"Error calling LLM: {str(e)}"
+    return "Error: Both models are rate limited. Please try again in 1 hour."
+    
 PERCEPTION_PROMPT = """
 You are an expert Brand Perception Researcher.
 Analyze the search results about a brand and extract key themes.
