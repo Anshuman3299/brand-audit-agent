@@ -154,6 +154,11 @@ By splitting into 4 specialized agents:
 - The pipeline mirrors how real brand consultancies work
 - LLM-as-Judge provides independent quality assurance
 
+## 🎥 Demo Video
+
+Brand Audit AI Agent Demo
+**https://www.loom.com/share/e0a569b075874227aca0bdb6a3f57cc0**
+
 
 ## 📁 Related Links
 
@@ -163,6 +168,8 @@ By splitting into 4 specialized agents:
 | GitHub | [github.com/Anshuman3299/brand-audit-agent](https://github.com/Anshuman3299/brand-audit-agent) |
 | Groq API | [console.groq.com](https://console.groq.com) |
 | Tavily API | [tavily.com](https://tavily.com) |
+
+---
 
 ## 👨‍💻 Built By
 **Anshuman Deshmukh**
